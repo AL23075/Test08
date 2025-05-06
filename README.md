@@ -43,6 +43,24 @@ git add <your-file-path>
 `your-file-path`の部分は現在地からの相対パスでも絶対パスでもいいです．  
 `<your-file-name>`の部分は適宜変えること．
 
+## git reset HEAD
+
+間違えて`git add`した場合．
+
+```shell
+git reset HEAD
+```
+
+これで，`git add`したファイルがすべて取り消されます．
+特定のファイルのみを取り消したいときは，以下を実行すること．
+
+```shell
+git reset HEAD <your-file-path>
+```
+
+`your-file-path`の部分は現在地からの相対パスでも絶対パスでもいいです．  
+`<your-file-name>`の部分は適宜変えること．
+
 ## git commit -m "comment"
 
 `git add`した内容をcommit（皆が見れる状態にしたいとき）
