@@ -3,3 +3,6 @@
 [Uu]serSettings
 [Tt]emp
 .vscode
+
+*.csproj
+*.sln
