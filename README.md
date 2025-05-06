@@ -6,17 +6,25 @@ From 2025/05/06 ~ To 2025//
 
 ## git clone
 
+このリポジトリをダウンロードしたいとき．
+
 ```shell
 git clone https://github.com/AL23075/Carcassonne.git
 ```
 
-## add remote
+これでできます．
+
+## git add remote
+
+このリポジトリで共同開発を行うとき．
 
 ```shell
 git remote add origin https://github.com/AL23075/Carcassonne.git
 git branch -M main
 git push -u origin main
 ```
+
+`git clone`->`git add remote`までやれば，セットアップは終了です．
 
 ## git add
 
