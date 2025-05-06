@@ -51,7 +51,8 @@ git add <your-file-path>
 git commit -m "your-comment"
 ```
 
-`your-comment`の部分は適宜変えること
+`your-comment`の部分は適宜変えること．  
+できるだけ「どこを変更した」とか，「どこを直した」的なのを簡潔に書いてくれると助かります．
 
 ## git status
 
@@ -107,4 +108,4 @@ git push -u origin <branch-name>
 
 ## Contact
 
-その他分からないことがあったら，`issues`かSlackで連絡ください．
+その他分からないことがあったら，`Issues`かSlackで連絡ください．
