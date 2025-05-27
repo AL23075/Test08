@@ -156,14 +156,21 @@ git checkout -b <branch-name>
 
 ### git push -u origin <branch-name>
 
-`branch`を登録したいとき．
+`branch`にデータを登録したいとき．
 
+初回
 ```shell
 git push -u origin <branch-name>
 ```
-
-これで登録できます．  
 `branch`を作成したら，ここまでやること．
+
+2回目以降
+```shell
+git push
+```
+
+これでデータの登録ができます．  
+`push`時の注意として，gitでデータが登録されるのはあくまでファイルです．ディレクトリではないので注意．
 
 ### git pull
 
