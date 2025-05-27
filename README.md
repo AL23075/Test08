@@ -45,7 +45,7 @@ git push -u origin main
 
 
 ## gitコマンド
-### git clone
+### `git clone`
 
 このリポジトリをダウンロードしたいとき．
 
@@ -55,7 +55,7 @@ git clone https://github.com/AL23075/Test08.git
 
 これでできます．
 
-### git remote add
+### `git remote add`
 
 このリポジトリで共同開発を行うとき．
 
@@ -67,7 +67,7 @@ git push -u origin main
 
 `git clone`->`git add remote`までやれば，セットアップは終了です．
 
-### git add
+### `git add`
 
 変更を加えたすべてのファイルをgit上にあげたいとき．
 
@@ -84,7 +84,7 @@ git add <your-file-path>
 `your-file-path`の部分は現在地からの相対パスでも絶対パスでもいいです．  
 `<your-file-name>`の部分は適宜変えること．
 
-### git reset HEAD
+### `git reset HEAD`
 
 間違えて`git add`したとき．
 
@@ -102,7 +102,7 @@ git reset HEAD <your-file-path>
 `your-file-path`の部分は現在地からの相対パスでも絶対パスでもいいです．  
 `<your-file-name>`の部分は適宜変えること．
 
-### git commit -m "comment"
+### `git commit -m "comment"`
 
 `git add`した内容をcommit（皆が見れる状態）にしたいとき．
 
@@ -113,7 +113,7 @@ git commit -m "your-comment"
 `your-comment`の部分は適宜変えること．  
 できるだけ「どこを変更した」とか，「どこを直した」的なのを簡潔に書いてくれると助かります．
 
-### git status
+### `git status`
 
 現在何が`add`されているのかやどのブランチにいるのか確かめたいとき．
 
@@ -123,7 +123,7 @@ git status
 
 これで詳細が表示されます．
 
-### git branch
+### `git branch`
 
 現在いる`branch`名を確認できます．
 
@@ -131,7 +131,7 @@ git status
 git branch
 ```
 
-### git checkout <branch-name>
+### `git checkout <branch-name>`
 
 `branch`を切り替えたいとき．
 
@@ -142,7 +142,7 @@ git checkout <branch-name>
 これで`branch`の切り替えができます．  
 `<branch-name>`の部分は適宜変えること．
 
-### git checkout -b <branch-name>
+### `git checkout -b <branch-name>`
 
 `branch`を作成したいとき．
 
@@ -153,7 +153,7 @@ git checkout -b <branch-name>
 これで`branch`の作成と切り替えが同時にできます．  
 `<branch-name>`の部分は適宜変えること．  
 
-### git checkout -b origin/<branch-name> <branch-name>
+### `git checkout -b origin/<branch-name> <branch-name>`
 
 リモートリポジトリにはブランチがあるが，ローカルリポジトリにはそのブランチがない場合．
 
@@ -161,7 +161,7 @@ git checkout -b <branch-name>
 git checkout -b origin/<branch-name> <branch-name>
 ```
 
-### git push -u origin <branch-name>
+### `git push -u origin <branch-name>`
 
 `branch`にデータを登録したいとき．
 
@@ -179,7 +179,7 @@ git push
 これでデータの登録ができます．  
 `push`時の注意として，gitでデータが登録されるのはあくまでファイルです．ディレクトリではないので注意．
 
-### git pull
+### `git pull`
 
 リポジトリを最新の状態に更新したいとき．
 
@@ -189,7 +189,7 @@ git pull
 
 これだけ．
 
-## Project
+## `Project`
 
 `git clone`したプロジェクトが導入できたかのチェックです．  
 必要に応じて，やってみてください．
