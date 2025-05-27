@@ -1,4 +1,4 @@
-# Carcassonne
+# Test08
 
 カルカソンヌガイドシステムの開発用
 
@@ -26,7 +26,7 @@ VSCodeで`Ctrl + @`でコマンドパレット（powershell）を開いて実行
 コマンドパレットで以下を実行します．
 
 ```shell
-cd Carcassonne
+cd Test08
 ```
 
 #### 3. `git remote add`の実行
