@@ -198,11 +198,11 @@ git pull
 
 ![表示できませんでした．](./git-img/open-project-1.png)
 
-### 2. `git clone`したフォルダ`Carcassonne`を指定して「決定」．
+### 2. `git clone`したフォルダ`Test08`を指定して「決定」．
 
 ![表示できませんでした．](./git-img/open-project-2.png)
 
-### 3. プロジェクトフォルダに`Carcassonne`が追加されます．
+### 3. プロジェクトフォルダに`Test08`が追加されます．
 
 ![表示できませんでした．](git-img/open-project-3.png)
 
