@@ -19,7 +19,7 @@ VSCodeで`Ctrl + @`でコマンドパレット（powershell）を開いて実行
 
 ![表示できませんでした．](git-img/git-clone.png)
 
-上記のような画面になるはずです．
+Gitのリンクは違いますが，上記のような画面になるはずです．
 
 #### 2. カレントディレクトリを`Test08`にする．
 
@@ -28,6 +28,8 @@ VSCodeで`Ctrl + @`でコマンドパレット（powershell）を開いて実行
 ```shell
 cd Test08
 ```
+
+上記はCarcassonneに移動していますが，Test08へ移動してください．
 
 #### 3. `git remote add`の実行
 
