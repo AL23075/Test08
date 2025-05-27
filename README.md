@@ -210,23 +210,6 @@ git pull
 
 ![表示できませんでした．](git-img/open-project-4.png)
 
-### 5. Assets/Scenes/SampleCubeを見てみる．
-
-![表示できませんでした．](git-img/open-project-5.png)
-
-### 6. SampleCubeをダブルクリック．
-
-![表示できませんでした．](git-img/open-project-6.png)
-
-### 7. 左上の`Cube`をクリックすると，右側にその情報が表示されます．
-
-![表示できませんでした．](git-img/open-project-7.png)
-
-### 8. 動かしてみる．
-上部に表示されている「▶」をクリックすると動きます．
-
-![表示できませんでした．](git-img/open-project-8.png)
-
 ## Contact
 
 その他分からないことがあったら，`Issues`かSlackで連絡ください．
