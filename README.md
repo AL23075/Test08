@@ -34,7 +34,7 @@ cd Test08
 コマンドパレットで以下を実行します．
 
 ```shell
-git remote add origin https://github.com/AL23075/Carcassonne.git
+git remote add origin https://github.com/AL23075/Test08.git
 git branch -M main
 git push -u origin main
 ```
@@ -50,7 +50,7 @@ git push -u origin main
 このリポジトリをダウンロードしたいとき．
 
 ```shell
-git clone https://github.com/AL23075/Carcassonne.git
+git clone https://github.com/AL23075/Test08.git
 ```
 
 これでできます．
@@ -60,7 +60,7 @@ git clone https://github.com/AL23075/Carcassonne.git
 このリポジトリで共同開発を行うとき．
 
 ```shell
-git remote add origin https://github.com/AL23075/Carcassonne.git
+git remote add origin https://github.com/AL23075/Test08.git
 git branch -M main
 git push -u origin main
 ```
