@@ -150,9 +150,8 @@ git checkout <branch-name>
 git checkout -b <branch-name>
 ```
 
-これで`branch`の作成ができます．  
+これで`branch`の作成と切り替えが同時にできます．  
 `<branch-name>`の部分は適宜変えること．  
-ただし，このままではローカルにあるだけ（皆が見れない）ので，次の`git push -u origin <branch-name>`で確認してください．
 
 ### git push -u origin <branch-name>
 
