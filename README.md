@@ -153,6 +153,14 @@ git checkout -b <branch-name>
 これで`branch`の作成と切り替えが同時にできます．  
 `<branch-name>`の部分は適宜変えること．  
 
+### git checkout -b origin/<branch-name> <branch-name>
+
+リモートリポジトリにはブランチがあるが，ローカルリポジトリにはそのブランチがない場合．
+
+```shell
+git checkout -b origin/<branch-name> <branch-name>
+```
+
 ### git push -u origin <branch-name>
 
 `branch`にデータを登録したいとき．
