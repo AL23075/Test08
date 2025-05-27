@@ -29,7 +29,7 @@ VSCodeで`Ctrl + @`でコマンドパレット（powershell）を開いて実行
 cd Carcassonne
 ```
 
-#### 3. `git add remote`の実行
+#### 3. `git remote add`の実行
 
 コマンドパレットで以下を実行します．
 
