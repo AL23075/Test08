@@ -4,10 +4,6 @@
 
 From 2025/05/06 ~ To 2025/07/22
 
-別途Unityについて勉強したこと等をまとめてます．
-
-Link : https://github.com/AL23075/Test08/blob/main/Unity.md
-
 ## Set Up
 ### 前提条件
 
