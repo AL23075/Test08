@@ -37,6 +37,6 @@ public class ChangeScene : MonoBehaviour {
 
     // タイトル画面への遷移
     public void Trans2TitlePlay() {
-        SceneManager.LoadScene("Title");
+        SceneManager.LoadScene("hozon");
     }
 }
