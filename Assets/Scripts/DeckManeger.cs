@@ -124,7 +124,7 @@ public class DeckManager : MonoBehaviour
         {
             tileUI.ShowTile(sr.sprite);
         }
- 
+
         /*heldTile = tile; // 今持ってるカードとして保持
         heldTileSprite = tile.GetComponent<SpriteRenderer>().sprite;
         tileUI.ShowTile(heldTileSprite);*/
