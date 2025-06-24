@@ -3,45 +3,6 @@ using UnityEngine.Tilemaps;
 using System.Collections.Generic;
 using System.IO;
 
-public enum Direction : int
-{
-    up,
-    right,
-    down,
-    left
-}
-
-public enum Kind : int
-{
-    grass,
-    road,
-    city
-}
-
-[System.Serializable]
-public class EdgeData
-{
-    public int up;
-    public int right;
-    public int down;
-    public int left;
-}
-
-[System.Serializable]
-public class TileData
-{
-    public int x, y, z;
-    public int rotation;   // 0, 90, 180, 270度をintで管理（左回りなら適宜変更可）
-    public EdgeData edgeData;
-    public string tileName;
-}
-
-[System.Serializable]
-public class TileMapSaveData
-{
-    public List<TileData> tiles = new List<TileData>();
-}
-
 public class TileManager : MonoBehaviour
 {
     [Header("タイルの設置対象Tilemap")]
@@ -67,14 +28,22 @@ public class TileManager : MonoBehaviour
     // 仮置きタイルの回転角度（0,90,180,270）
     private int tempTileRotation = 0;
 
-    void Start()
+void Start()
     {
-        tileBases = Resources.LoadAll<TileBase>("Tiles");
+        CustomTile[] customTiles = Resources.LoadAll<CustomTile>("Tiles"); // ← CustomTile型で読み込む
+        tileBases = customTiles; // TileBase[] に格納（Inspector 用）
+
         nameToTile = new Dictionary<string, TileBase>();
-        foreach (var tile in tileBases)
+
+        foreach (var tile in customTiles)
         {
             if (tile != null)
+            {
                 nameToTile[tile.name] = tile;
+                edgeDataDict[tile.name] = tile.edgeData;
+
+                Debug.Log($"読み込んだタイル: {tile.name}");
+            }
         }
 
         // (0,0,0) に初期固定タイル設置（回転0度）
@@ -368,23 +337,19 @@ public class TileManager : MonoBehaviour
         return result;
     }
 
-    bool MatchEdgeWithNeighbor(int myEdge, Vector3Int neighborPos, Direction neighborSide)
+    bool MatchEdgeWithNeighbor(Kind myEdge, Vector3Int neighborPos, Direction neighborSide)
     {
         TileBase neighborTile = tilemap.GetTile(neighborPos);
-        if (neighborTile == null) return true; // 隣が無ければOK
+        if (neighborTile == null) return true;
 
-        // 隣のタイルのEdgeData取得
         if (!edgeDataDict.TryGetValue(neighborTile.name, out EdgeData neighborEdge)) return false;
 
-        // 隣のタイルの回転角取得
         Quaternion rot = tilemap.GetTransformMatrix(neighborPos).rotation;
         int rotZ = Mathf.RoundToInt(rot.eulerAngles.z / 90) * 90 % 360;
-
-        // 隣のEdgeDataも回転
         EdgeData rotatedNeighbor = RotateEdgeData(neighborEdge, rotZ);
 
-        // 向きに対応する辺を比較
-        int neighborValue = 0;
+        Kind neighborValue = Kind.grass; // 初期値（必要なら例外対応も）
+
         switch (neighborSide)
         {
             case Direction.up: neighborValue = rotatedNeighbor.up; break;
