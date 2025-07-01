@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2844533644340439329}
   - component: {fileID: 2271012016128489513}
   - component: {fileID: 2047278801835557300}
+  - component: {fileID: 6706527216321176045}
   m_Layer: 0
   m_Name: Tile3_0
   m_TagString: Untagged
@@ -134,3 +135,17 @@ BoxCollider2D:
   m_AutoTiling: 0
   m_Size: {x: 2.56, y: 2.56}
   m_EdgeRadius: 0
+--- !u!114 &6706527216321176045
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5729646551650641667}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ae44ebfd3e4fd744ca920aac042d6cb5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  MeepleR: {fileID: 5444541941115035439, guid: 9a7828fad0f0fd94eabc6f45074edaec, type: 3}
+  MeepleB: {fileID: 2655617904377100981, guid: c0bfc2fc2ce5ecc4fae732aceea10c05, type: 3}
