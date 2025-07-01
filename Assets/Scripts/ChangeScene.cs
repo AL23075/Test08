@@ -8,7 +8,8 @@ public class ChangeScene : MonoBehaviour {
 
     void Start() {
         for (int i = 0; i < transform.childCount; i++) {
-            // Score = ;            // スコア受け継ぐ処理の記述
+            int player1_score = int.Parse(ScoreofPlayer1Manager.score_of_player1) ;
+            int player2_score = int.Parse(ScoreofPlayer2Manager.score_of_player2); 
             Transform child = transform.GetChild(i);
             Debug.Log("Child name: " + child.name);         // デバッグ：子要素のコンポーネントの一覧表示
 
@@ -16,10 +17,27 @@ public class ChangeScene : MonoBehaviour {
             // テキストコンポーネントがあるとき
             if (textComponent != null) {
                 if (child.name == "ResultText") {       // ResultTextコンポーネント
-                    textComponent.text = "WIN!!!";
+                    if(player1_score > player2_score){
+                        textComponent.text = "Player1 WIN!!!";
+                    }
+                    else if(player1_score < player2_score){
+                        textComponent.text = "Player2 WIN!!!";
+                    }
+                    else{
+                        textComponent.text = "Draw";
+                    }
                 }
                 else if (child.name == "ScoreText") {       // ScoreTextコンポーネント：DisplayScore()は実質これ
                     textComponent.text = "Score: " + Score.ToString();
+                    if(player1_score > player2_score){
+                        textComponent.text = "Score : " + player1_score;
+                    }
+                    else if(player1_score < player2_score){
+                        textComponent.text = "Score : " + player2_score;
+                    }
+                    else{
+                        textComponent.text = "Score : " + player1_score;
+                    }
                 }
             }
         }
@@ -30,9 +48,9 @@ public class ChangeScene : MonoBehaviour {
     //     // 今後スコアを表示する処理をここに追加可能
     // }
 
-    // リザルト画面への遷移
+    // プレイ画面への遷移
     public void Trans2Result() {
-        SceneManager.LoadScene("Result");
+        SceneManager.LoadScene("SampleScene");
     }
 
     // タイトル画面への遷移
