@@ -35,7 +35,7 @@ MonoBehaviour:
   m_Flags: 1
   m_ColliderType: 1
   edgeData:
-    up: 0
+    up: 2
     right: 0
     down: 0
     left: 0
