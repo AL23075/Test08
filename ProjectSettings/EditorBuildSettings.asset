@@ -9,7 +9,7 @@ EditorBuildSettings:
     path: Assets/Scenes/SampleScene.unity
     guid: 8c9cfa26abfee488c85f1582747f6a02
   - enabled: 1
-    path: Assets/Scenes/hozon.unity
+    path: Assets/hozon.unity
     guid: 79f2f8f270817a140900bd7f1a33391e
   - enabled: 1
     path: Assets/Scenes/Result.unity
