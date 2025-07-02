@@ -9,16 +9,13 @@ using System.Collections.Generic;
 public class GameManager2 : MonoBehaviour
 {
     public List<GameObject> tilePrefabs;  //登録した山札
-    public GameObject startTile;  //スタートタイル
     private List<GameObject> deck;  //山札
     public DrawnTileUI tileUI;  //UIの参照
     private GameObject heldTile;  //現在「手札」で保持しているタイル
     private Sprite heldTileSprite;  //UI表示用スプライト
     private GameObject previewTile;  //仮置きタイル
     private Vector3 lastSnapTilePos = Vector3.positiveInfinity; //仮置きタイルが最後に置かれた場所
-    private Vector3 lastSnapMeeplePos = Vector3.positiveInfinity; //仮置きタイルが最後に置かれた場所
-    public GameObject Meeple;  //ミープル
-    private GameObject previewMeeple;  //仮置きミープル
+
 
 /************************************************
 *** Function Name : start
@@ -32,9 +29,6 @@ public class GameManager2 : MonoBehaviour
         //登録した山札をコピー
         deck = new List<GameObject>(tilePrefabs);
         ShuffleDeck();
-
-        //スタートタイルの設置
-        Instantiate(startTile, new Vector3(0f, 0f, 0f), Quaternion.identity);
 
         //最初の1枚を引く
         DrawOneTile();
@@ -110,7 +104,7 @@ public class GameManager2 : MonoBehaviour
 *** Function: タイルやミープルの配置を確定する
 *** Return : void
 ************************************************/
-    public void ConfirmPlacement()
+    public void ConfirmTilePlacement()
     {
         if (previewTile != null){
             Vector3 finalTilePos = previewTile.transform.position;

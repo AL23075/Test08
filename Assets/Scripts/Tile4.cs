@@ -39,7 +39,7 @@ public class Tile4 : MonoBehaviour
             return;
         }
         if (previewMeeple == null){
-            previewMeeple = Instantiate(Meeple);
+            previewMeeple = Instantiate(Meeple, transform);
             lastSnapMeeplePos = MeeplePos;
         }else{
             if (MeeplePos == lastSnapMeeplePos){
@@ -58,6 +58,5 @@ public class Tile4 : MonoBehaviour
         }
         previewMeeple.transform.localPosition = MeeplePos;
         MeepleNum.Instance.setplace(place);
-
     }
 }
