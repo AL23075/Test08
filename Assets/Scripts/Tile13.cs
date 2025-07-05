@@ -1,3 +1,8 @@
+/*************************************************
+*** Designer : 御堂
+*** Date : 2025.6.23
+*** Purpose : Tile13におけるミープルの配置
+*************************************************/
 using UnityEngine;
 
 public class Tile13 : MonoBehaviour
@@ -11,49 +16,80 @@ public class Tile13 : MonoBehaviour
 
     private void OnMouseDown()
     {
-        Vector3 worldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
-        worldPos.z = 0f;
+        if (MeepleNum.Instance.n == 1){
+            Vector3 worldPos = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+            worldPos.z = 0f;
+            Vector3 localPos = transform.InverseTransformPoint(worldPos);
 
-        // ローカル座標に変換
-        Vector3 localPos = transform.InverseTransformPoint(worldPos);
 
+            float threshold = 0.6f;
+            float Absthreshold = 0.3f;
+            Vector3 MeeplePos = new Vector3(0f, 0f, 0f);
 
-        float threshold = 0.6f;
-        float Absthreshold = 0.3f;
-        Vector3 MeeplePos = new Vector3(0f, 0f, 0f);
+            if (Turn.Instance.TurnNum()%2 == 0){
+                Meeple = MeepleR;
+            }else{
+                Meeple = MeepleB;
+            }
 
-        if (Turn.Instance.TurnNum()%2 == 0){
-            Meeple = MeepleR;
-        }else{
-            Meeple = MeepleB;
-        }
+            string place = "";
 
-        string place = "";
-
-        if (localPos.x < -threshold && Mathf.Abs(localPos.y) < Absthreshold){
-            MeeplePos = new Vector3(-0.9f, 0f, -0.1f);
-            place = "city";
-        }else{
-            return;
-        }
-        if (previewMeeple == null){
-            previewMeeple = Instantiate(Meeple, transform);
-        }else{
-            if (MeeplePos == lastSnapMeeplePos){
-                check = !check;
-                previewMeeple.SetActive(check);
-                if (check == false){
-                    place = "";
+            if (localPos.x < -threshold && Mathf.Abs(localPos.y) < Absthreshold){
+                MeeplePos = new Vector3(-0.9f, 0f, -0.1f);
+                place = "city";
+            }else{
+                return;
+            }
+            if (previewMeeple == null){
+                previewMeeple = Instantiate(Meeple, transform);
+                if (Turn.Instance.TurnNum()%2 == 0){
+                    MeepleNum.Instance.DecreaseB();
+                }else{
+                    MeepleNum.Instance.DecreaseR();
                 }
             }else{
-                if (!check){
+                if (MeeplePos == lastSnapMeeplePos){
                     check = !check;
-                    previewMeeple.SetActive(true);
+                    previewMeeple.SetActive(check);
+                    if (check == false){
+                        place = "";
+                        if (Turn.Instance.TurnNum()%2 == 0){
+                            MeepleNum.Instance.IncreaseB();
+                            if (MeepleNum.Instance.color == "B"){
+                                MeepleNum.Instance.DecreaseB();
+                                MeepleNum.Instance.IncreaseR();
+                                MeepleNum.Instance.color = "";
+                            }
+                        }else{
+                            MeepleNum.Instance.IncreaseR();
+                            if (MeepleNum.Instance.color == "R"){
+                                MeepleNum.Instance.DecreaseR();
+                                MeepleNum.Instance.IncreaseB();
+                                MeepleNum.Instance.color = "";
+                            }
+                        }
+                    }else{
+                        if (Turn.Instance.TurnNum()%2 == 0){
+                            MeepleNum.Instance.DecreaseB();
+                        }else{
+                            MeepleNum.Instance.DecreaseR();
+                        }
+                    }
+                }else{
+                    if (!check){
+                        check = !check;
+                        previewMeeple.SetActive(true);
+                        if (Turn.Instance.TurnNum()%2 == 0){
+                            MeepleNum.Instance.DecreaseB();
+                        }else{
+                            MeepleNum.Instance.DecreaseR();
+                        }
+                    }
+                    lastSnapMeeplePos = MeeplePos;
                 }
-                lastSnapMeeplePos = MeeplePos;
             }
+            previewMeeple.transform.localPosition = MeeplePos;
+            MeepleNum.Instance.setplace(place);
         }
-        previewMeeple.transform.localPosition = MeeplePos;
-        MeepleNum.Instance.setplace(place);
     }
 }

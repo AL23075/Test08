@@ -9,13 +9,13 @@ using System.Collections.Generic;
 public class GameManager2 : MonoBehaviour
 {
     public List<GameObject> tilePrefabs;  //登録した山札
+    public GameObject startTile;  //スタートタイル
     private List<GameObject> deck;  //山札
     public DrawnTileUI tileUI;  //UIの参照
     private GameObject heldTile;  //現在「手札」で保持しているタイル
     private Sprite heldTileSprite;  //UI表示用スプライト
     private GameObject previewTile;  //仮置きタイル
     private Vector3 lastSnapTilePos = Vector3.positiveInfinity; //仮置きタイルが最後に置かれた場所
-
 
 /************************************************
 *** Function Name : start
@@ -30,6 +30,9 @@ public class GameManager2 : MonoBehaviour
         deck = new List<GameObject>(tilePrefabs);
         ShuffleDeck();
 
+        //スタートタイルの設置
+        Instantiate(startTile, new Vector3(0f, 0f, 0f), Quaternion.identity);
+
         //最初の1枚を引く
         DrawOneTile();
     }
@@ -43,7 +46,9 @@ public class GameManager2 : MonoBehaviour
 ************************************************/
     void Update()
     {
-        TilePlace();
+        if (MeepleNum.Instance.n == 0){
+            TilePlace();
+        }
     }
 
 /************************************************
@@ -98,10 +103,10 @@ public class GameManager2 : MonoBehaviour
     }
 
 /************************************************
-*** Function Name : ConfirmPlacement
+*** Function Name : ConfirmTilePlacement
 *** Designer : 御堂
 *** Date : 2025.6.8
-*** Function: タイルやミープルの配置を確定する
+*** Function: タイルの配置を確定する
 *** Return : void
 ************************************************/
     public void ConfirmTilePlacement()
@@ -118,15 +123,7 @@ public class GameManager2 : MonoBehaviour
             heldTile = null;
             tileUI.ClearTile();
             DrawOneTile();
-            Turn.Instance.TurnNumPlus();
-            if (MeepleNum.Instance.place != ""){
-                if (Turn.Instance.TurnNum()%2 == 0){
-                    MeepleNum.Instance.DecreaseR();
-                }else{
-                    MeepleNum.Instance.DecreaseB();
-                }
-            }
-            MeepleNum.Instance.initplace();
+            MeepleNum.Instance.n = 1;
         }
     }
 
