@@ -26,11 +26,11 @@ public class color : MonoBehaviour
 ************************************************/
     public void Inputcolor(string color)
     {
-        //R,Bが入力された時の処理
-        if (color == "R"){
+        //R,,r,B,bが入力された時の処理
+        if (color == "R" || color == "r"){
             MeepleNum.Instance.color = "R";
             MeepleNum.Instance.n = 1;
-        }else if (color == "B"){
+        }else if (color == "B" || color == "b"){
             MeepleNum.Instance.color = "B";
             MeepleNum.Instance.n = 1;
         }else{
