@@ -80,5 +80,6 @@ public class MeepleNum : MonoBehaviour
     public void okMeeple()
     {
         n = 0;
+        color = "";
     }
 }
