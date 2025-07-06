@@ -1411,7 +1411,12 @@ MonoBehaviour:
   - {fileID: 3412159135937650167, guid: 3f6bc248f7bc4004ea672e3e94b66851, type: 3}
   - {fileID: 8799437651794503276, guid: 410e0ae7789788d47afd8ee69cc56cfe, type: 3}
   startTile: {fileID: 8010092379737631204, guid: 9c840fc1d56c716478ce67030bb7f997, type: 3}
+  deck: []
   tileUI: {fileID: 418215358}
+  heldTile: {fileID: 0}
+  heldTileSprite: {fileID: 0}
+  previewTile: {fileID: 0}
+  lastSnapTilePos: {x: Infinity, y: Infinity, z: Infinity}
 --- !u!1 &457150972
 GameObject:
   m_ObjectHideFlags: 0
@@ -2963,6 +2968,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreInputField: {fileID: 983983652}
   totalScoreText: {fileID: 1056324689}
+  currentTotalScore: 0
 --- !u!114 &865715149
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2977,6 +2983,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   scoreInputField: {fileID: 506105076}
   totalScoreText: {fileID: 2083155406}
+  currentTotalScore: 0
 --- !u!114 &865715150
 MonoBehaviour:
   m_ObjectHideFlags: 0
