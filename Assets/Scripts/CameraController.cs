@@ -1,3 +1,8 @@
+/*************************************************
+*** Designer : 御堂
+*** Date : 2025.7.3
+*** Purpose : カメラの移動
+*************************************************/
 using UnityEngine;
 
 public class CameraController : MonoBehaviour
