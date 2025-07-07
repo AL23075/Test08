@@ -1,7 +1,7 @@
 /*************************************************
 *** Designer : 御堂
-*** Date : 2025.6.8
-*** Purpose : 山札から引いたタイルのUI表示
+*** Date : 2025.6.30
+*** Purpose : Meepleの数を表示させる
 *************************************************/
 
 using UnityEngine;
@@ -18,9 +18,9 @@ public class MNumUI : MonoBehaviour
 
 
 /************************************************
-*** Function Name : ShowTile
+*** Function Name : Update
 *** Designer : 御堂
-*** Date : 2025.6.8
+*** Date : 2025.6.30
 *** Function: UIに表示する
 *** Return : void
 ************************************************/
