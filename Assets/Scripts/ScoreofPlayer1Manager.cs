@@ -1,6 +1,11 @@
 using UnityEngine;
 using TMPro; // TextMeshProを使用する場合に必要
 
+/*************************************************
+*** Designer : 樫原
+*** Date : 2025.7.8
+*** Purpose : プレイヤー1の得点を管理するための関数
+*************************************************/
 public class ScoreofPlayer1Manager : MonoBehaviour
 {
     // UI要素への参照

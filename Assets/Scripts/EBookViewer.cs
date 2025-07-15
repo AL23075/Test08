@@ -2,6 +2,11 @@ using UnityEngine;
 using UnityEngine.UI;
 using TMPro; // TextMeshProを使用する場合
 
+/*************************************************
+*** Designer : 樫原
+*** Date : 2025.7.8
+*** Purpose : プレイ画面に遷移するための関数
+*************************************************/
 public class EBookViewer : MonoBehaviour
 {
     public TextMeshProUGUI pageText; // ページに表示するテキスト

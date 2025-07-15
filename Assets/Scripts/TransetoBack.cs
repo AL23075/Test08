@@ -2,6 +2,11 @@
 using UnityEngine;
 using UnityEngine.SceneManagement; // シーン管理のための名前空間
 
+/*************************************************
+*** Designer : 倉地
+*** Date : 2025.7.8
+*** Purpose : ルール説明画面からタイトル画面に戻るための関数
+*************************************************/
 public class RuleExplanationSceneManager : MonoBehaviour
 {
     // Inspector から設定するボタンなどがあればここに public 変数を追加
