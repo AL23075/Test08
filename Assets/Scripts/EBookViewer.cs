@@ -5,7 +5,7 @@ using TMPro; // TextMeshProを使用する場合
 /*************************************************
 *** Designer : 樫原
 *** Date : 2025.7.8
-*** Purpose : プレイ画面に遷移するための関数
+*** Purpose : ルール説明画面を表示する
 *************************************************/
 public class EBookViewer : MonoBehaviour
 {
