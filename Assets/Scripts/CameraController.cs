@@ -19,28 +19,36 @@ public class CameraController : MonoBehaviour
         HandleZoom();
         HandleDrag();
     }
-
+/************************************************
+*** Function Name : HandleZoom
+*** Designer : 御堂
+*** Date : 2025.7.3
+*** Function: カメラのズーム
+*** Return : void
+************************************************/
     void HandleZoom()
     {
         float scroll = Input.GetAxis("Mouse ScrollWheel");
-
-        if (Camera.main.orthographic)
-        {
-            // 2D用：Orthographic Sizeを変える
+        //OrthographicSizeを変える
+        if (Camera.main.orthographic){
             Camera.main.orthographicSize -= scroll * zoomSpeed;
             Camera.main.orthographicSize = Mathf.Clamp(Camera.main.orthographicSize, minZoom, maxZoom);
         }
     }
-
+/************************************************
+*** Function Name : HandleZoom
+*** Designer : 御堂
+*** Date : 2025.7.3
+*** Function: カメラの移動
+*** Return : void
+************************************************/
     void HandleDrag()
     {
-        if (Input.GetMouseButtonDown(0)) // 右クリックで開始
-        {
+        if (Input.GetMouseButtonDown(0)){
             lastMousePosition = Input.mousePosition;
         }
 
-        if (Input.GetMouseButton(0))
-        {
+        if (Input.GetMouseButton(0)){
             Vector3 delta = Input.mousePosition - lastMousePosition;
             Vector3 move = new Vector3(-delta.x * moveSpeed * Time.deltaTime, -delta.y * moveSpeed * Time.deltaTime, 0);
             Camera.main.transform.Translate(move, Space.Self);

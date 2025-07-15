@@ -54,7 +54,32 @@ public class MeepleNum : MonoBehaviour
 *** Function Name : setplace,initplace
 *** Designer : 御堂
 *** Date : 2025.6.30
-*** Function: 駒を置いた場所の取得
+*** Function: 駒を置いた場所の取得,削除
+*** Return : void
+************************************************/
+    public bool CheckMeeple(string c)
+    {
+        if (c == "r"){
+            if (MeepleR <= 0){
+                return false;
+            }else{
+                return true;
+            }
+        }else if (c == "b"){
+            if (MeepleB <= 0){
+                return false;
+            }else{
+                return true;
+            }
+        }else{
+            return false;
+        }
+    }
+/************************************************
+*** Function Name : setplace,initplace
+*** Designer : 御堂
+*** Date : 2025.6.30
+*** Function: 駒を置いた場所の取得,削除
 *** Return : void
 ************************************************/
     public void setplace(string indplace)

@@ -27,7 +27,18 @@ public class MNumUI : MonoBehaviour
     void Update()
     {
         if (MeepleNum.Instance != null){
-            meepleText.text = $"                      {MeepleNum.Instance.MeepleB}                       {MeepleNum.Instance.MeepleR}";
+            if (MeepleNum.Instance.MeepleB >= 1 && MeepleNum.Instance.MeepleR >= 1){
+                meepleText.text = $"                      {MeepleNum.Instance.MeepleB}                       {MeepleNum.Instance.MeepleR}";
+            }
+            if (MeepleNum.Instance.MeepleB < 1 && MeepleNum.Instance.MeepleR >= 1){
+                meepleText.text = $"                      {"None"}                       {MeepleNum.Instance.MeepleR}";
+            }
+            if (MeepleNum.Instance.MeepleB >= 1 && MeepleNum.Instance.MeepleR < 1){
+                meepleText.text = $"                      {MeepleNum.Instance.MeepleB}                       {"None"}";
+            }
+            if (MeepleNum.Instance.MeepleB < 1 && MeepleNum.Instance.MeepleR < 1){
+                meepleText.text = $"                      {"None"}                       {"None"}";
+            }
         }
         MeepleRImage.sprite = MeepleRSprite;
         MeepleBImage.sprite = MeepleBSprite;
