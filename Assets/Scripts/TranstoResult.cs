@@ -1,6 +1,11 @@
 using UnityEngine;
 using UnityEngine.SceneManagement; // SceneManagerを使用するために必要
 
+/*************************************************
+*** Designer : 樫原
+*** Date : 2025.7.8
+*** Purpose : リザルト画面に遷移するための関数
+*************************************************/
 public class TransetoResult : MonoBehaviour
 {
     // このメソッドをボタンのOnClickイベントに設定します

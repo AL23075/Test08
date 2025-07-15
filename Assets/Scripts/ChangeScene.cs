@@ -2,6 +2,11 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+/*************************************************
+*** Designer : 樫原, 宇野
+*** Date : 2025.7.8
+*** Purpose : リザルト画面に結果を表示し，タイトル画面もしくはプレイ画面に遷移するための関数
+*************************************************/
 public class ChangeScene : MonoBehaviour {
 
     private int Score = 0;

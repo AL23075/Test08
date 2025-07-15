@@ -2,6 +2,11 @@
 using UnityEngine;
 using UnityEngine.SceneManagement; // シーン管理のための名前空間
 
+/*************************************************
+*** Designer : 石山
+*** Date : 2025.7.8
+*** Purpose : ルール説明画面へ遷移するための関数
+*************************************************/
 public class TransetoRule : MonoBehaviour
 {
     // Inspector から設定するボタンなどがあればここに public 変数を追加
