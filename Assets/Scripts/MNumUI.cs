@@ -27,16 +27,16 @@ public class MNumUI : MonoBehaviour
     void Update()
     {
         if (MeepleNum.Instance != null){
-            if (MeepleNum.Instance.MeepleB >= 1 && MeepleNum.Instance.MeepleR >= 1){
+            if (MeepleNum.Instance.MeepleB >= 0 && MeepleNum.Instance.MeepleR >= 0){
                 meepleText.text = $"                      {MeepleNum.Instance.MeepleB}                       {MeepleNum.Instance.MeepleR}";
             }
-            if (MeepleNum.Instance.MeepleB < 1 && MeepleNum.Instance.MeepleR >= 1){
+            if (MeepleNum.Instance.MeepleB < 0 && MeepleNum.Instance.MeepleR >= 0){
                 meepleText.text = $"                      {"None"}                       {MeepleNum.Instance.MeepleR}";
             }
-            if (MeepleNum.Instance.MeepleB >= 1 && MeepleNum.Instance.MeepleR < 1){
+            if (MeepleNum.Instance.MeepleB >= 0 && MeepleNum.Instance.MeepleR < 0){
                 meepleText.text = $"                      {MeepleNum.Instance.MeepleB}                       {"None"}";
             }
-            if (MeepleNum.Instance.MeepleB < 1 && MeepleNum.Instance.MeepleR < 1){
+            if (MeepleNum.Instance.MeepleB < 0 && MeepleNum.Instance.MeepleR < 0){
                 meepleText.text = $"                      {"None"}                       {"None"}";
             }
         }

@@ -60,13 +60,13 @@ public class MeepleNum : MonoBehaviour
     public bool CheckMeeple(string c)
     {
         if (c == "r"){
-            if (MeepleR <= 0){
+            if (MeepleR < 0){
                 return false;
             }else{
                 return true;
             }
         }else if (c == "b"){
-            if (MeepleB <= 0){
+            if (MeepleB < 0){
                 return false;
             }else{
                 return true;
@@ -99,6 +99,17 @@ public class MeepleNum : MonoBehaviour
 ************************************************/
     public void Meepleconfirm()
     {
+        bool a = true;
+        string c = "";
+        if (Turn.Instance.TurnNum()%2 == 0){
+            c = "b";
+        }else{
+            c = "r";
+        }
+        a = CheckMeeple(c);
+        if (a == false){
+            return;
+        }
         n = 0;
         Turn.Instance.TurnNumPlus();
     }
